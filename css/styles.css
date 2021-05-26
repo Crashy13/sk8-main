@@ -3,12 +3,28 @@ img {
 }
 
 ul {
-  padding: 0;
+  padding-left: unset;
   list-style-type: none;
 }
 
 body {
-  background-image: url(../images/bg.jpg);
+  background: url('./../images/bg.jpg') top left / cover no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav--main .nav__item {
+  background-color: #A73634;
+}
+
+.nav--main .nav__link {
+  color: #FFF;
+}
+
+.nav--main .nav__item:not(:last-child) {
+  margin-right: 10px;
 }
 
 .header {
@@ -32,104 +48,81 @@ body {
   margin-right: 20%
 }
 
-.title-box {
+#carousel {
+  height: 365px;
+  background: url('./../images/top-image.png') no-repeat -120px -120px;
   position: relative;
-  width: 80%;
-  height: 360px;
-  border: 10px solid #FFF;
-  margin-bottom: 30px;
+  overflow: hidden;
 }
 
-.camera {
-  display: block;
-	width: 100%;
-	height: 100%;
+#carousel::before {
+  content: url('./../images/grid.png');
+  opacity: .3;
 }
 
-.grid {
+#carousel > .logo {
   position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  width: 50%;
 }
 
-.logo {
-  position: absolute;
-  top: 10%;
-  bottom: 0;
-	left: 0;
-	right: 0;
-	height: 80%;
-	width: 50%;
-}
-
-.stories {
-  width: 80%
-}
-
-.stories > * {
+#news > * {
   background-color: #FFF;
 }
 
-@media screen and (max-width: 768px) {
-  .stories {
-    display: block;
-    position: relative;
-    width: 80%;
-    height: 30%;
-  }
+#skateboarders img {
+  min-height: 100%;
+  min-width: 100%;
 }
 
-.skateboarders {
-  width: 80%;
+.skateboarder {
+  border: 5px solid #FFF;
+  overflow: hidden;
+  position: relative;
 }
 
-.skateboarders > * {
+.skateboarder_lance {
+  margin-right: 1.5rem;
+}
+
+.skateboarder_tommy {
   height: 100%;
-  border: solid 5px #FFF;
 }
 
-@media screen and (max-width: 768px) {
-  .skateboarders {
-    display: block;
-    width: auto;
+.skateboarder span {
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#skateboards {
+background: #FFF;
+padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .skateboard-image {
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-25%);
+    height: 260px;
+    width: 65px;
   }
 }
 
-.skateboards {
-  display: inline-flex;
-  width: 80%;
-  height: 150px;
-  background-color: #FFF;
-  padding: 0;
-  margin-top: 10px;
-}
-
-@media screen and (max-width 768px) {
-  .skateboards {
-    display: block;
-    width: 50%;
-  }
-}
-.skateboards > * {
-  width: 13%;
-  height: 100%;
-  transform: rotate(90deg);
-  margin: 0 -18px
-}
-
-@media screen and (max-width: 768px) {
-  .skateboards > * {
-    width: 100%;
-    transform: rotate(0deg);
-    height: 10%;
-    margin: 0;
-  }
-
-}
+/* #skateboards > * {
+  transform-origin: top left;
+  transform: rotate(90deg) translateY(-25%);
+  height: 100px;
+  width: 65px;
+} */
 
 .footer {
   width: 80%;
